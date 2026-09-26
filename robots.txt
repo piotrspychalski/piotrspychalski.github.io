@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://piotrspychalski.github.io/sitemap.xml

@@ -1,0 +1,16 @@
+# Piotr Spychalski, MD, PhD
+
+> Colorectal surgeon and clinical researcher at the Medical University of Gdańsk, Poland (ORCID 0000-0001-7111-4660, Wikidata Q57611140). Research: colorectal cancer screening and colonoscopy quality (NordICC, Polish Colonoscopy Screening Program), organ-preserving treatment of early colorectal cancer (Horizon Europe ECOPOP: ETHOS, SCAR, T-REX), randomised trials in colorectal surgery (CORAL, Principal Investigator; STOP-HOS-1).
+
+## Pages
+- [Profile and selected publications](https://piotrspychalski.github.io/): biography, research areas, selected publications with DOIs
+
+## Authoritative identifiers
+- [ORCID](https://orcid.org/0000-0001-7111-4660): complete, maintained publication list
+- [Wikidata](https://www.wikidata.org/wiki/Q57611140)
+- [Google Scholar](https://scholar.google.com/citations?user=gsedoL4AAAAJ)
+- [Semantic Scholar](https://www.semanticscholar.org/author/30688757)
+- [OpenAlex](https://openalex.org/A5000836693)
+
+## Disambiguation
+- Not to be confused with other researchers named Spychalski (e.g. Paweł, Wojciech, Przemysław, Michał Spychalski).
