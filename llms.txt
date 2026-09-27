@@ -4,7 +4,7 @@
 
 ## Pages
 - [Profile and selected publications](https://piotrspychalski.github.io/): biography, research areas, selected publications with DOIs
-- [Informacje dla pacjentów (PL)](https://piotrspychalski.github.io/pl/): scope of clinical practice (colorectal cancer, robotic and laparoscopic colorectal surgery, diverticular disease, stoma, proctology), how patients reach him at the University Clinical Centre in Gdańsk (NFZ only, no private practice), recruiting clinical trials
+- [Polski / informacje dla pacjentów](https://piotrspychalski.github.io/pl/): Polish version of the full profile plus patient information: scope of clinical practice, how patients reach him at the University Clinical Centre in Gdańsk (NFZ only, no private practice, DiLO line), clinical trials open to patients
 - [Publications with summaries (EN)](https://piotrspychalski.github.io/publications/): all papers with plain-language summaries, DOIs and PMIDs
 - [Publikacje ze streszczeniami (PL)](https://piotrspychalski.github.io/pl/publikacje/): wszystkie prace z opisami po polsku
 - [publications.md](https://piotrspychalski.github.io/publications.md): the same content as plain Markdown
