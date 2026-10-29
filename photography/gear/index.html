@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sprzęt · Gear · Piotr Spychalski Photography</title>
+<meta name="description" content="Aparaty i obiektywy, którymi zrobione są zdjęcia w portfolio Piotra Spychalskiego. Cameras and lenses behind the photography portfolio.">
+<link rel="canonical" href="https://piotrspychalski.github.io/photography/gear/">
+<link rel="author" href="https://piotrspychalski.github.io/">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --bg:#0c0c0b; --bg2:#151513; --fg:#f1ede6; --mut:#8f8a82; --line:#2a2925; --acc:#e3b26a;
+  --serif:"Fraunces",Georgia,serif; --sans:"Inter",-apple-system,system-ui,sans-serif;
+  --gut:clamp(16px,4vw,56px); --row:clamp(190px,26vw,360px); --gap:clamp(6px,0.8vw,12px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.55 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+
+/* nav */
+.nav{position:fixed;inset:0 0 auto;z-index:20;display:flex;align-items:center;justify-content:space-between;
+  padding:18px var(--gut);transition:background .3s,padding .3s;text-shadow:0 1px 12px rgba(0,0,0,.45)}
+.nav:not(.solid) .nav-r a{color:rgba(255,255,255,.85)}
+.nav.solid{background:rgba(12,12,11,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding-top:12px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.brand{font-family:var(--serif);font-size:20px;letter-spacing:.01em;white-space:nowrap}
+.nav-r{display:flex;gap:22px;align-items:center;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.nav-r a{color:var(--mut);transition:color .2s}.nav-r a:hover{color:var(--fg)}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.lang button{background:none;border:0;color:var(--mut);font:600 11px var(--sans);letter-spacing:.08em;padding:6px 10px;cursor:pointer}
+.lang button.on{background:var(--fg);color:var(--bg)}
+
+/* hero */
+.hero{position:relative;height:100svh;min-height:520px;overflow:hidden}
+.hero img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);animation:drift 18s ease-out forwards}
+@keyframes drift{to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35) 0,transparent 30%,transparent 50%,rgba(12,12,11,.92) 100%)}
+.hero-t{position:absolute;z-index:2;left:var(--gut);right:var(--gut);bottom:clamp(28px,7vh,80px)}
+.hero h1{font:300 clamp(44px,8.5vw,128px)/.95 var(--serif);margin:0;letter-spacing:-.02em}
+.hero h1 em{font-style:italic;color:var(--acc)}
+.hero-m{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-top:22px;color:var(--mut);font-size:13px;letter-spacing:.04em}
+.hero-m .loc::before{content:"";display:inline-block;width:28px;height:1px;background:var(--mut);vertical-align:middle;margin-right:10px}
+.scroll{font-size:11px;letter-spacing:.2em;text-transform:uppercase}
+
+/* intro + index */
+.intro{padding:clamp(64px,10vw,140px) var(--gut) 40px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end}
+.intro p{font:300 clamp(22px,2.6vw,36px)/1.25 var(--serif);margin:0;max-width:18em}
+.stats{display:flex;gap:40px;justify-content:flex-end}
+.stats b{display:block;font:300 clamp(40px,5vw,72px)/1 var(--serif)}
+.stats span{color:var(--mut);font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+.label{padding:0 var(--gut);color:var(--mut);font-size:12px;letter-spacing:.18em;text-transform:uppercase;margin:40px 0 16px}
+.map{position:relative;margin:0 var(--gut)}
+.map svg{position:absolute;inset:0;width:100%;height:100%}
+.map path{fill:none;stroke:rgba(241,237,230,.28);stroke-width:.7;vector-effect:non-scaling-stroke;stroke-linejoin:round}
+.pin{position:absolute;width:26px;height:26px;margin:-13px 0 0 -13px;display:grid;place-items:center;cursor:pointer;z-index:1}
+.pin::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 5px rgba(227,178,106,.16);transition:transform .2s}
+.pin:hover,.pin:focus-within,.pin.open{z-index:5}
+.pin:hover::before,.pin:focus-within::before,.pin.open::before{transform:scale(1.35)}
+.pin .tip{position:absolute;bottom:100%;left:50%;transform:translate(-50%,4px);padding-bottom:8px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;white-space:nowrap}
+.pin .tip>*,.pin:not(.multi) .tip{font-size:13px}
+.pin:not(.multi) .tip,.pin.multi .tip a{display:flex;gap:8px;align-items:baseline}
+.pin .tip small{color:var(--mut);font-size:11px}
+.pin:not(.multi) .tip::after{content:none}
+.pin .tip{background:none}
+.pin:not(.multi) .tip,.pin.multi .tip{filter:drop-shadow(0 6px 18px rgba(0,0,0,.5))}
+.pin:not(.multi) .tip{padding:7px 11px;background:var(--bg2);border:1px solid var(--line);border-radius:4px;margin-bottom:8px}
+.pin.multi .tip{display:flex;flex-direction:column;background:var(--bg2);border:1px solid var(--line);border-radius:4px;padding:4px;margin-bottom:8px}
+.pin.multi .tip a{padding:6px 9px;border-radius:3px}.pin.multi .tip a:hover{background:var(--line)}
+.pin:hover .tip,.pin:focus-within .tip,.pin.open .tip{opacity:1;transform:translate(-50%,0);pointer-events:auto}
+.places{display:flex;flex-wrap:wrap;gap:8px 22px;padding:26px var(--gut) 0;font-size:14px}
+.places a{color:var(--mut);transition:color .2s}.places a:hover{color:var(--fg)}
+.places b{color:var(--acc);font:500 11px var(--sans);letter-spacing:.08em;margin-right:7px}
+
+/* trips */
+.trip{padding:clamp(72px,9vw,130px) var(--gut) 0}.trip+.trip{padding-top:clamp(56px,7vw,110px)}
+.cover{position:relative;display:block;height:clamp(340px,78vh,860px);margin:0 calc(-1*var(--gut)) var(--gap);overflow:hidden;cursor:zoom-in;background:var(--bg2)}
+.cover img{width:100%;height:100%;object-fit:cover;transition:transform 1.6s cubic-bezier(.2,.7,.2,1)}
+.cover:hover img{transform:scale(1.025)}
+.cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(12,12,11,.85) 100%);pointer-events:none}
+.cover-t{position:absolute;z-index:2;left:var(--gut);right:var(--gut);bottom:clamp(22px,5vh,56px);display:grid;grid-template-columns:auto 1fr auto;align-items:baseline;gap:20px;color:var(--fg)}
+.cover-t .meta{color:rgba(241,237,230,.8);font-size:13px;letter-spacing:.04em;text-align:right}
+.cover:focus-visible{outline:2px solid var(--acc);outline-offset:-4px}
+.trip .num{font:500 13px var(--sans);letter-spacing:.1em;color:var(--acc)}
+.trip h2{margin:0;text-shadow:0 1px 18px rgba(0,0,0,.35);font:300 clamp(36px,5.5vw,84px)/1 var(--serif);letter-spacing:-.015em}
+.trip header p{margin:0;color:var(--mut);font-size:13px;letter-spacing:.04em;text-align:right}
+
+/* justified gallery — pure CSS: each figure grows by its aspect ratio */
+.jg{display:flex;flex-wrap:wrap;gap:var(--gap)}
+.jg::after{content:"";flex-grow:999}
+.jg figure{margin:0;position:relative;flex:calc(var(--ar)*100) 1 calc(var(--ar)*var(--row));overflow:hidden;background:var(--bg2);border-radius:3px}
+.jg a{display:block;cursor:zoom-in}
+.jg img{width:100%;height:auto;aspect-ratio:var(--ar);object-fit:cover;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.jg figcaption{position:absolute;inset:auto 0 0;padding:40px 16px 14px;font-size:13px;letter-spacing:.03em;
+  background:linear-gradient(transparent,rgba(0,0,0,.72));opacity:0;transform:translateY(8px);transition:opacity .35s,transform .35s;pointer-events:none}
+.jg figcaption span::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--acc);margin-right:8px;vertical-align:middle;transform:translateY(-1px)}
+.jg figure:hover img{transform:scale(1.03)}
+.jg figure:hover figcaption,.jg a:focus-visible figcaption{opacity:1;transform:none}
+.jg a:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+@media (hover:none){.jg figcaption{display:none}}
+
+/* reveal on scroll */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+footer{margin-top:clamp(90px,12vw,160px);padding:40px var(--gut) 48px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;color:var(--mut);font-size:13px}
+footer a:hover{color:var(--fg)}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:50;background:rgba(8,8,7,.97);display:grid;grid-template-rows:1fr auto;opacity:0;pointer-events:none;transition:opacity .3s}
+.lb.on{opacity:1;pointer-events:auto}
+.lb-stage{position:relative;display:flex;align-items:center;justify-content:center;padding:56px clamp(12px,6vw,90px) 8px;min-height:0}
+.lb-stage img{max-width:100%;max-height:100%;object-fit:contain;transition:opacity .25s}
+.lb-bar{display:flex;justify-content:space-between;align-items:center;padding:14px var(--gut) 22px;font-size:13px;letter-spacing:.04em}
+.lb-bar .cnt{color:var(--mut);font-variant-numeric:tabular-nums}
+.lb button{background:none;border:0;color:var(--fg);cursor:pointer;font:300 28px var(--sans);opacity:.7;transition:opacity .2s}
+.lb button:hover{opacity:1}
+.lb .x{position:absolute;top:12px;right:var(--gut);font-size:30px}
+.lb .pv,.lb .nx{position:absolute;top:50%;transform:translateY(-50%);padding:20px 12px;font-size:36px}
+.lb .pv{left:4px}.lb .nx{right:4px}
+
+@media (max-width:760px){
+  .intro{grid-template-columns:1fr;gap:28px}.stats{justify-content:flex-start}
+  .cover-t{grid-template-columns:auto 1fr}.cover-t .meta{grid-column:1/-1;text-align:left}.cover{height:clamp(300px,62vh,560px)}
+  .nav-r .hide-m{display:none}.nav-r{gap:16px}.only-m{display:inline!important}
+  .places{font-size:13px;gap:6px 16px}.brand{font-size:17px}.nav-r{gap:12px}.lang button{padding:5px 8px}
+  :root{--row:150px}
+  .lb .pv,.lb .nx{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+.only-m{display:none}
+
+.gear{padding:clamp(110px,14vw,170px) var(--gut) 0;max-width:1240px;margin:0 auto}
+.gear h1{font:300 clamp(44px,7vw,104px)/.95 var(--serif);margin:0 0 14px;letter-spacing:-.02em}
+.gear .lead{color:var(--mut);margin:0 0 clamp(40px,6vw,80px);max-width:56ch}
+.cam{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(20px,4vw,56px);align-items:center;padding:clamp(28px,4vw,48px) 0;border-top:1px solid var(--line)}
+.cam figure{margin:0;border-radius:3px;overflow:hidden;background:var(--bg2);aspect-ratio:3/2}
+.cam figure img{width:100%;height:100%;object-fit:cover}
+.cam figcaption{font-size:12px;color:var(--mut);letter-spacing:.03em;margin-top:8px}
+.cam h2{font:300 clamp(30px,3.6vw,52px)/1 var(--serif);margin:0 0 6px;letter-spacing:-.01em}
+.cam .kind{color:var(--acc);font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin:0 0 20px}
+.cam ul{list-style:none;margin:0 0 18px;padding:0}
+.cam li{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px solid var(--line)}
+.cam li span:last-child{color:var(--mut);font-variant-numeric:tabular-nums;white-space:nowrap}
+.cam .where{color:var(--mut);font-size:13px;margin:0}
+.note{color:var(--mut);font-size:13px;padding:28px 0 0;border-top:1px solid var(--line)}
+@media (max-width:760px){.cam{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav class="nav solid" id="nav">
+  <a class="brand" href="../">Piotr Spychalski</a>
+  <div class="nav-r">
+    <a class="i18n" href="../" data-pl="Portfolio" data-en="Portfolio">Portfolio</a>
+    <a href="/">CV</a>
+    <a href="https://www.instagram.com/piospy/" target="_blank" rel="noopener" aria-label="Instagram"><span class="hide-m">Instagram</span><span class="only-m">IG</span></a>
+    <a class="hide-m" href="https://www.strava.com/athletes/24144960" target="_blank" rel="noopener">Strava</a>
+    <div class="lang" role="group" aria-label="Język / Language"><button data-l="pl" class="on">PL</button><button data-l="en">EN</button></div>
+  </div>
+</nav>
+<main class="gear">
+  <h1 class="i18n" data-pl="Sprzęt" data-en="Gear">Sprzęt</h1>
+  <p class="lead i18n" data-pl="Aparaty i obiektywy, którymi zrobiłem zdjęcia z portfolio. Liczby pokazują, ile zdjęć na stronie powstało danym sprzętem." data-en="The cameras and lenses behind the photos in this portfolio. Numbers show how many of the photos on the site were taken with each.">Aparaty i obiektywy, którymi zrobiłem zdjęcia z portfolio. Liczby pokazują, ile zdjęć na stronie powstało danym sprzętem.</p>
+<section class="cam"><figure><img src="../img/altea-spain-2024-altea-06-800.jpg" alt="Altea, Hiszpania · 2024" loading="lazy" width="2000" height="1333"><figcaption class="i18n" data-pl="Altea, Hiszpania · 2024" data-en="Altea, Spain · 2024">Altea, Hiszpania · 2024</figcaption></figure><div><h2>Nikon Z fc</h2><p class="kind i18n" data-pl="Bezlusterkowiec APS-C" data-en="Mirrorless, APS-C">Bezlusterkowiec APS-C</p><ul><li><span>Nikkor Z DX 16-50mm f/3.5-6.3 VR</span><span>31</span></li><li><span>Nikkor Z DX 18-140mm f/3.5-6.3 VR</span><span>29</span></li><li><span>Viltrox AF 33/1.4 Z</span><span>15</span></li><li><b class="i18n" data-pl="Zdjęć w portfolio" data-en="Photos in the portfolio">Zdjęć w portfolio</b><span>75</span></li></ul><p class="where i18n" data-pl="Altea, Amsterdam, Majorka, Larnaka, Quito, Nowy Jork, Boston, Ateny, Bogota, Rzym, Gdańsk" data-en="Altea, Amsterdam, Mallorca, Larnaca, Quito, New York, Boston, Athens, Bogotá, Rome, Gdańsk">Altea, Amsterdam, Majorka, Larnaka, Quito, Nowy Jork, Boston, Ateny, Bogota, Rzym, Gdańsk</p></div></section>
+<section class="cam"><figure><img src="../img/cordillera-blanca-peru-2026-peru-02-800.jpg" alt="Cordillera Blanca, Peru · 2026" loading="lazy" width="2000" height="1333"><figcaption class="i18n" data-pl="Cordillera Blanca, Peru · 2026" data-en="Cordillera Blanca, Peru · 2026">Cordillera Blanca, Peru · 2026</figcaption></figure><div><h2>Nikon Z f</h2><p class="kind i18n" data-pl="Bezlusterkowiec pełnoklatkowy" data-en="Mirrorless, full frame">Bezlusterkowiec pełnoklatkowy</p><ul><li><span>Nikkor Z 24-200mm f/4-6.3 VR</span><span>30</span></li><li><span>Nikkor Z 40mm f/2</span><span>4</span></li><li><b class="i18n" data-pl="Zdjęć w portfolio" data-en="Photos in the portfolio">Zdjęć w portfolio</b><span>34</span></li></ul><p class="where i18n" data-pl="Peru, Galápagos, Ekwador, Sycylia, Japonia, Gdańsk" data-en="Peru, Galápagos, Ecuador, Sicily, Japan, Gdańsk">Peru, Galápagos, Ekwador, Sycylia, Japonia, Gdańsk</p></div></section>
+<section class="cam"><figure><img src="../img/huascaran-peru-2026-peru-01-800.jpg" alt="Huascarán, Peru · 2026" loading="lazy" width="2000" height="1333"><figcaption class="i18n" data-pl="Huascarán, Peru · 2026" data-en="Huascarán, Peru · 2026">Huascarán, Peru · 2026</figcaption></figure><div><h2>Sony RX100 VI</h2><p class="kind i18n" data-pl="Kompakt, matryca 1&quot;" data-en="Compact, 1-inch sensor">Kompakt, matryca 1&quot;</p><ul><li><span>Zeiss 24–200 mm f/2.8–4.5</span><span>19</span></li><li><b class="i18n" data-pl="Zdjęć w portfolio" data-en="Photos in the portfolio">Zdjęć w portfolio</b><span>19</span></li></ul><p class="where i18n" data-pl="Peru, Galápagos, Ekwador, Altea, Festiwal Zorza, Krynica Morska, Gdańsk" data-en="Peru, Galápagos, Ecuador, Altea, Zorza Festival, Krynica Morska, Gdańsk">Peru, Galápagos, Ekwador, Altea, Festiwal Zorza, Krynica Morska, Gdańsk</p></div></section>
+<section class="cam"><figure><img src="../img/mallorca-spain-2025-mallorca-01-800.jpg" alt="Majorka, Hiszpania · 2025" loading="lazy" width="2000" height="1500"><figcaption class="i18n" data-pl="Majorka, Hiszpania · 2025" data-en="Mallorca, Spain · 2025">Majorka, Hiszpania · 2025</figcaption></figure><div><h2>iPhone 15 Pro</h2><p class="kind i18n" data-pl="Telefon" data-en="Phone">Telefon</p><ul><li><b class="i18n" data-pl="Zdjęć w portfolio" data-en="Photos in the portfolio">Zdjęć w portfolio</b><span>6</span></li></ul><p class="where i18n" data-pl="Majorka, Bogota, Rzym, Gdańsk" data-en="Mallorca, Bogotá, Rome, Gdańsk">Majorka, Bogota, Rzym, Gdańsk</p></div></section>
+<section class="cam"><figure><img src="../img/altea-spain-2025-altea-01-800.jpg" alt="Altea, Hiszpania · 2025" loading="lazy" width="2000" height="1333"><figcaption class="i18n" data-pl="Altea, Hiszpania · 2025" data-en="Altea, Spain · 2025">Altea, Hiszpania · 2025</figcaption></figure><div><h2>Fujifilm X100VI</h2><p class="kind i18n" data-pl="Kompakt APS-C ze stałym obiektywem" data-en="Fixed-lens APS-C compact">Kompakt APS-C ze stałym obiektywem</p><ul><li><span>Fujinon 23 mm f/2</span><span>3</span></li><li><b class="i18n" data-pl="Zdjęć w portfolio" data-en="Photos in the portfolio">Zdjęć w portfolio</b><span>3</span></li></ul><p class="where i18n" data-pl="Altea" data-en="Altea">Altea</p></div></section>
+  <p class="note i18n" data-pl="Obróbka: Adobe Lightroom." data-en="Editing: Adobe Lightroom.">Obróbka: Adobe Lightroom.</p>
+</main>
+<footer>
+  <span>© <span id="yr"></span> Piotr Spychalski · <span class="i18n" data-pl="Wszelkie prawa zastrzeżone" data-en="All rights reserved">Wszelkie prawa zastrzeżone</span></span>
+  <span><a href="../">Portfolio</a> · <a href="/">CV</a> · <a href="https://www.instagram.com/piospy/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.strava.com/athletes/24144960" target="_blank" rel="noopener">Strava</a></span>
+</footer>
+<script>
+(() => {
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  let lang = 'pl'; try { lang = localStorage.getItem('lang') || (navigator.language.startsWith('pl') ? 'pl' : 'en'); } catch (e) {}
+  function setLang(l) {
+    lang = l; document.documentElement.lang = l;
+    $$('.i18n').forEach(el => { el.innerHTML = el.dataset[l]; });
+    $$('.lang button').forEach(b => b.classList.toggle('on', b.dataset.l === l));
+    try { localStorage.setItem('lang', l); } catch (e) {}
+  }
+  $$('.lang button').forEach(b => b.onclick = () => setLang(b.dataset.l));
+  setLang(lang);
+})();
+</script>
+<script data-goatcounter="https://piotrspychalski.goatcounter.com/count"
+        async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
