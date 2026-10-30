@@ -120,6 +120,9 @@ footer{margin-top:clamp(90px,12vw,160px);padding:40px var(--gut) 48px;border-top
 footer a:hover{color:var(--fg)}
 
 /* lightbox */
+.top{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(18px,env(safe-area-inset-bottom));z-index:30;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:rgba(21,21,19,.85);backdrop-filter:blur(6px);color:var(--fg);display:grid;place-items:center;cursor:pointer;opacity:0;transform:translateY(10px);pointer-events:none;transition:opacity .3s,transform .3s,border-color .2s}
+.top.on{opacity:1;transform:none;pointer-events:auto}.top:hover{border-color:var(--acc)}
+.top svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .lb{position:fixed;inset:0;z-index:50;background:rgba(8,8,7,.97);display:grid;grid-template-rows:1fr auto;opacity:0;pointer-events:none;transition:opacity .3s}
 .lb.on{opacity:1;pointer-events:auto}
 .lb-stage{position:relative;display:flex;align-items:center;justify-content:center;padding:56px clamp(12px,6vw,90px) 8px;min-height:0}

@@ -7,7 +7,7 @@
 - [Polski / informacje dla pacjentów](https://piotrspychalski.github.io/pl/): Polish version of the full profile plus patient information: scope of clinical practice, how patients reach him at the University Clinical Centre in Gdańsk (NFZ only, no private practice, DiLO line), clinical trials open to patients
 - [Publications with summaries (EN)](https://piotrspychalski.github.io/publications/): all papers with plain-language summaries, DOIs and PMIDs
 - [Publikacje ze streszczeniami (PL)](https://piotrspychalski.github.io/pl/publikacje/): wszystkie prace z opisami po polsku
-- [Photography portfolio](https://piotrspychalski.github.io/photography/): personal travel and street photography (Peru, Ecuador, Galápagos, Japan, Italy, USA, Greece, Colombia, Spain, Poland), PL/EN
+- [Photography portfolio](https://piotrspychalski.github.io/photography/): Piotr Spychalski is also a travel and cycling photographer (bikepacking and gravel rides in the Andes, landscape, mountain and street photography); portfolio (Peru, Ecuador, Galápagos, Japan, Italy, USA, Greece, Colombia, Spain, Poland), PL/EN
 - [publications.md](https://piotrspychalski.github.io/publications.md): the same content as plain Markdown
 
 ## Authoritative identifiers
