@@ -53,15 +53,18 @@ img{display:block;max-width:100%}
 .stats b{display:block;font:300 clamp(40px,5vw,72px)/1 var(--serif)}
 .stats span{color:var(--mut);font-size:12px;letter-spacing:.1em;text-transform:uppercase}
 .label{padding:0 var(--gut);color:var(--mut);font-size:12px;letter-spacing:.18em;text-transform:uppercase;margin:40px 0 16px}
-.map{position:relative;margin:0 var(--gut);overflow:hidden;cursor:zoom-in;--k:1;border-radius:4px}
-.map.zoom{cursor:zoom-out}
-.map-in{position:absolute;inset:0;transform-origin:0 0;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.map{position:relative;margin:0 var(--gut);border-radius:4px}
+.map-vp{position:absolute;inset:0;overflow:hidden;cursor:zoom-in;border-radius:4px;scrollbar-width:none;overscroll-behavior:contain}
+.map-vp::-webkit-scrollbar{display:none}
+@media (max-width:699px){.map.zoom{aspect-ratio:auto!important;height:min(62vh,540px)}}
+.map.zoom .map-vp{overflow:auto;cursor:grab;-webkit-overflow-scrolling:touch}
+.map.zoom .map-vp.drag{cursor:grabbing}
+.map-in{position:relative;width:100%;height:100%}
 .map svg{position:absolute;inset:0;width:100%;height:100%}
-.map .pin{transform:scale(calc(1/var(--k)))}
-.map-out{position:absolute;right:10px;top:10px;z-index:6;width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:var(--bg2);color:var(--fg);font:400 20px/1 var(--sans);cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s}
+.map-out{position:absolute;right:10px;top:10px;z-index:6;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--bg2);color:var(--fg);font:400 22px/1 var(--sans);cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s}
 .map.zoom .map-out{opacity:1;pointer-events:auto}
 .map-hint{margin:10px var(--gut) 0;color:var(--mut);font-size:12px;letter-spacing:.04em}
-.map path{fill:none;stroke:rgba(241,237,230,.28);stroke-width:calc(.7px / var(--k));vector-effect:non-scaling-stroke;stroke-linejoin:round}
+.map path{fill:none;stroke:rgba(241,237,230,.28);stroke-width:.7px;vector-effect:non-scaling-stroke;stroke-linejoin:round}
 .pin{position:absolute;width:26px;height:26px;margin:-13px 0 0 -13px;display:grid;place-items:center;cursor:pointer;z-index:1}
 .pin::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 5px rgba(227,178,106,.16);transition:transform .2s}
 .pin:hover,.pin:focus-within,.pin.open{z-index:5}
@@ -77,6 +80,7 @@ img{display:block;max-width:100%}
 .pin.multi .tip{display:flex;flex-direction:column;background:var(--bg2);border:1px solid var(--line);border-radius:4px;padding:4px;margin-bottom:8px}
 .pin.multi .tip a{padding:6px 9px;border-radius:3px}.pin.multi .tip a:hover{background:var(--line)}
 .pin:hover .tip,.pin:focus-within .tip,.pin.open .tip{opacity:1;transform:translate(-50%,0);pointer-events:auto}
+.pin.below .tip{bottom:auto;top:100%;padding-bottom:0;padding-top:8px}.pin.below:not(.multi) .tip,.pin.below.multi .tip{margin-bottom:0;margin-top:8px}
 .places{display:flex;flex-wrap:wrap;gap:8px 22px;padding:26px var(--gut) 0;font-size:14px}
 .places a{color:var(--mut);transition:color .2s}.places a:hover{color:var(--fg)}
 .places b{color:var(--acc);font:500 11px var(--sans);letter-spacing:.08em;margin-right:7px}
