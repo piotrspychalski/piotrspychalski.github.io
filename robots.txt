@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://piotrspychalski.github.io/sitemap.xml
+Sitemap: https://piotrspychalski.pl/sitemap.xml

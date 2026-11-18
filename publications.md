@@ -2,7 +2,7 @@
 
 > Colorectal surgeon and clinical researcher, Medical University of Gdańsk and University Clinical Centre, Gdańsk, Poland. ORCID 0000-0001-7111-4660, Wikidata Q57611140. Plain-language summaries (English and Polish) of all papers.
 
-HTML: https://piotrspychalski.github.io/publications/ (English), https://piotrspychalski.github.io/pl/publikacje/ (Polski). Last updated 2026-09-27.
+HTML: https://piotrspychalski.pl/publications/ (English), https://piotrspychalski.pl/pl/publikacje/ (Polski). Last updated 2026-09-27.
 
 ## 2026
 
