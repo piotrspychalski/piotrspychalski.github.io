@@ -2,12 +2,25 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<script>
+// Polish browsers (or an earlier click on "Polski") go to /pl/; ?lang=en or an earlier click on "English" stays here.
+(function () {
+  if (/[?&]lang=en(&|$)/.test(location.search)) return;
+  var saved = null;
+  try { saved = localStorage.getItem('lang'); } catch (e) {}
+  var langs = navigator.languages || [navigator.language || ''];
+  var pl = false;
+  for (var i = 0; i < langs.length; i++) if (/^pl/i.test(langs[i])) pl = true;
+  if (saved === 'pl' || (!saved && pl)) location.replace('/pl/');
+})();
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Piotr Spychalski, MD, PhD | colorectal surgeon and researcher, Medical University of Gdańsk</title>
 <meta name="description" content="Piotr Spychalski, MD, PhD, colorectal surgeon and clinical researcher at the Medical University of Gdańsk, Poland. Colorectal cancer screening, organ-preserving treatment of early colorectal cancer, randomised trials in colorectal surgery.">
 <link rel="canonical" href="https://piotrspychalski.pl/">
 <link rel="alternate" hreflang="en" href="https://piotrspychalski.pl/">
 <link rel="alternate" hreflang="pl" href="https://piotrspychalski.pl/pl/">
+<link rel="alternate" hreflang="x-default" href="https://piotrspychalski.pl/">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -65,7 +78,7 @@
 <body>
 <main>
 <h1>Piotr Spychalski, MD, PhD</h1>
-<p class="sub">Colorectal surgeon and clinical researcher · University Clinical Centre and Medical University of Gdańsk, Poland · <a href="/publications/">Publications</a> · <a href="/photography/">Photography</a> · <a href="/surgitome/">SURGITOME</a> · <a href="/sports-academy/">HoEBM Academy</a> · <a href="/pl/" hreflang="pl" lang="pl">Polski (informacje dla pacjentów)</a></p>
+<p class="sub">Colorectal surgeon and clinical researcher · University Clinical Centre and Medical University of Gdańsk, Poland · <a href="/publications/">Publications</a> · <a href="/photography/">Photography</a> · <a href="/surgitome/">SURGITOME</a> · <a href="/sports-academy/">HoEBM Academy</a> · <a href="/pl/" hreflang="pl" lang="pl" onclick="try{localStorage.setItem('lang','pl')}catch(e){}">Polski (informacje dla pacjentów)</a></p>
 
 <p>Assistant Professor at the Department of Surgical Oncology, Transplant and General Surgery, Medical University of Gdańsk (Gdański Uniwersytet Medyczny), and general surgery specialist in the colorectal surgery unit of the University Clinical Centre in Gdańsk. Scientific coordinator of the Laboratory of Research in Organ Medicine at the Medical University of Gdańsk.</p>
 
@@ -113,7 +126,7 @@ Ongoing: CORAL, comparing robotic and laparoscopic colon resection (Principal In
   <li>Spychalski P, Błażyńska-Spychalska A, Kobiela J. Estimating case fatality rates of COVID-19. <em>Lancet Infect Dis</em>. 2020;20:774-775. <a href="https://doi.org/10.1016/S1473-3099(20)30246-2">doi:10.1016/S1473-3099(20)30246-2</a></li>
 </ul>
 <p class="small">PubMed: 52 articles (12 as first author). Scopus: 55 documents, 629 citations, h-index 14. Total impact factor approx. 482. As of 26 September 2026.</p>
-<p>All publications with plain-language summaries: <a href="/publications/">Publications</a> (<a href="/pl/publikacje/" hreflang="pl" lang="pl">po polsku</a>). Master list: <a href="https://orcid.org/0000-0001-7111-4660">ORCID</a>.</p>
+<p>All publications with plain-language summaries: <a href="/publications/">Publications</a> (<a href="/pl/publikacje/" hreflang="pl" lang="pl" onclick="try{localStorage.setItem('lang','pl')}catch(e){}">po polsku</a>). Master list: <a href="https://orcid.org/0000-0001-7111-4660">ORCID</a>.</p>
 
 <h2>Education and qualifications</h2>
 <ul>
